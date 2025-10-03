@@ -5,3 +5,4 @@ pluginManagement {
 	}
 }
 rootProject.name = "connectly"
+include("app")

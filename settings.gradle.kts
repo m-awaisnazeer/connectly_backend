@@ -8,3 +8,4 @@ rootProject.name = "connectly"
 include("app")
 
 include("user")
+include("chat")

@@ -8,6 +8,8 @@ pluginManagement {
 rootProject.name = "connectly"
 include("app")
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 include("user")
 include("chat")
 include("notification")

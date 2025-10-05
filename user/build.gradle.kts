@@ -1,10 +1,9 @@
 plugins {
-    alias(libs.plugins.kotlin.jvm)
-    alias(libs.plugins.kotlin.spring)
-    alias(libs.plugins.spring.boot)
-    alias(libs.plugins.spring.dependency.management)
-    alias(libs.plugins.kotlin.jpa)
+    id("java-library")
+    id("connectly.spring-boot-service")
+    kotlin("plugin.jpa")
 }
+
 
 group = "com.communisol"
 version = "unspecified"
@@ -15,12 +14,21 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
-}
+    implementation(projects.common)
+
+    implementation(libs.spring.boot.starter.security)
+    implementation(libs.spring.boot.starter.validation)
+
+    implementation(libs.spring.boot.starter.data.redis)
+    implementation(libs.spring.boot.starter.data.jpa)
+    runtimeOnly(libs.postgresql)
+
+    implementation(libs.jwt.api)
+    runtimeOnly(libs.jwt.impl)
+    runtimeOnly(libs.jwt.jackson)
+
+    testImplementation(kotlin("test"))}
 
 tasks.test {
     useJUnitPlatform()
-}
-kotlin {
-    jvmToolchain(21)
 }

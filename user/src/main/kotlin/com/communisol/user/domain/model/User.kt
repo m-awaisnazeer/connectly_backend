@@ -1,6 +1,6 @@
-package com.communisol.com.communisol.user.domain.model
+package com.communisol.user.domain.model
 
-import org.hibernate.validator.constraints.UUID
+import java.util.UUID
 
 typealias UserId = UUID
 
@@ -9,5 +9,4 @@ data class User(
     val userName: String,
     val mail: String,
     val hasEmailVerified: Boolean,
-
 )

@@ -1,4 +1,4 @@
-package com.communisol.com.communisol.user.domain.model
+package com.communisol.user.domain.model
 
 data class AuthenticatedUser(
     val user: User,
